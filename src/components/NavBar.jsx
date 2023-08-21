@@ -4,15 +4,19 @@ import CartWidget from './CartWidget'
 const NavBar = () => {
   return (
     <>
-    <CartWidget/>
-    <div>
+    <div className='navbar'>
+      <div className='cartshop'>
+        <CartWidget/>
+      </div>
+      <div className='navlist'>
         <span>esto es la NavBar</span>
-        <ul>
-            <li>Inicio</li>
-            <li>Sobre Nosotros</li>
-            <li>Tienda</li>
-            <li>Contacto</li>
+        <ul className='navlist'>
+            <li className='navitem'>Inicio</li>
+            <li className='navitem'>Sobre Nosotros</li>
+            <li className='navitem'>Tienda</li>
+            <li className='navitem'>Contacto</li>
         </ul>
+      </div>
     </div>
     
     </>

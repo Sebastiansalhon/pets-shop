@@ -5,9 +5,12 @@ import NavBar from "./components/NavBar"
 const App = () => {
   return (
     <>
-    <div>App</div>
+    <div className="nav-bar">
     <NavBar/>
+    </div>
+    <div className="item-list-container">
     <ItemListContainer/>
+    </div>
     </>
   )
 }
