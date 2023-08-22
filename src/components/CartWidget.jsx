@@ -1,8 +1,12 @@
+import { SunIcon } from '@chakra-ui/icons'
 import React from 'react'
 
 const CartWidget = () => {
     return (
-        <div>carrito here</div>
+        <>
+        <SunIcon/>
+        <p>5</p>
+        </>
     )
 }
 
