@@ -1,11 +1,14 @@
-import { SunIcon } from '@chakra-ui/icons'
 import React from 'react'
 
 const CartWidget = () => {
     return (
         <>
-        <SunIcon/>
-        <p>5</p>
+        <div className='cartShop'>
+        <span className="material-symbols-outlined">
+shopping_bag
+</span>
+        <span className='cartItems'>5</span>
+        </div>
         </>
     )
 }

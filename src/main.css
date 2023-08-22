@@ -1,0 +1,39 @@
+.brand {
+    font-family: 'Pacifico', cursive;
+    font-size: 40px;
+    color: orange;
+}
+
+.menu {
+    font-family: 'Pacifico', cursive;
+    font-size: 40px;
+    color: orange;
+}
+.material-symbols-outlined {
+    font-size: 40px;
+}
+
+
+.cartShop {
+    padding: 16px;
+    font-family: 'Pacifico', cursive;
+    font-size: 40px;
+    color: orange;
+}
+
+.greeting {
+    text-align: center;
+    font-size: xx-large;
+    color: orange;
+}
+.numeroContador {
+    font-size: x-large;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: 1rem;
+}
+.contador {
+    margin-left: 15px;
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+}

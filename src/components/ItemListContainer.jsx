@@ -1,8 +1,16 @@
-import React from 'react'
+import ItemCount from "./ItemCount"
+import { useState } from 'react'
 
 const ItemListContainer = ({greeting}) => {
+
+    
+
     return (
-        <h1>{greeting}</h1>
+        <>
+        <h1 className="greeting">{greeting}</h1>
+
+        <ItemCount />
+        </>
     )
 }
 

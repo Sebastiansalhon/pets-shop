@@ -11,15 +11,16 @@ import {
 const NavBar = () => {
   return (
     <>
+    <div className='navBar'>
     <Flex>
-  <Box p='4'>
-      <h3>Pets Shop</h3>
+  <Box bg='aqua' p='4'>
+      <h3 className='brand'>Pets Shop</h3>
   </Box>
-  <Spacer />
-  <Box p='4'>
-<Menu>
+  <Spacer bg='aqua' />
+  <Box bg='aqua' p='4'>
+<Menu >
   <MenuButton >
-    Menu
+    <p className='menu'>Menu</p>
   </MenuButton>
   <MenuList>
     <MenuItem>Inicio</MenuItem>
@@ -28,11 +29,12 @@ const NavBar = () => {
   </MenuList>
 </Menu>
   </Box>
-  <Spacer/>
-    <Box>
+  <Spacer bg='aqua' />
+    <Box bg='aqua'>
         <CartWidget/>
     </Box>
 </Flex>
+    </div>
     
     </>
   )
