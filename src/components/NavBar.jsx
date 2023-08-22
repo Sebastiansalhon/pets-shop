@@ -13,11 +13,11 @@ const NavBar = () => {
     <>
     <div className='navBar'>
     <Flex>
-  <Box bg='aqua' p='4'>
+  <Box bg='burlywood' p='4'>
       <h3 className='brand'>Pets Shop</h3>
   </Box>
-  <Spacer bg='aqua' />
-  <Box bg='aqua' p='4'>
+  <Spacer bg='burlywood' />
+  <Box bg='burlywood' p='4'>
 <Menu >
   <MenuButton >
     <p className='menu'>Menu</p>
@@ -29,8 +29,8 @@ const NavBar = () => {
   </MenuList>
 </Menu>
   </Box>
-  <Spacer bg='aqua' />
-    <Box bg='aqua'>
+  <Spacer bg='burlywood' />
+    <Box bg='burlywood'>
         <CartWidget/>
     </Box>
 </Flex>

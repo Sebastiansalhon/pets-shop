@@ -1,13 +1,13 @@
 .brand {
     font-family: 'Pacifico', cursive;
     font-size: 40px;
-    color: orange;
+    color: chocolate;
 }
 
 .menu {
     font-family: 'Pacifico', cursive;
     font-size: 40px;
-    color: orange;
+    color: chocolate;
 }
 .material-symbols-outlined {
     font-size: 40px;
@@ -18,13 +18,15 @@
     padding: 16px;
     font-family: 'Pacifico', cursive;
     font-size: 40px;
-    color: orange;
+    color: chocolate;
 }
 
 .greeting {
+    padding-top: 16px;
     text-align: center;
     font-size: xx-large;
-    color: orange;
+    color: chocolate;
+    font-family:'Barriecito', cursive;
 }
 .numeroContador {
     font-size: x-large;

@@ -13,7 +13,6 @@ return (
     <h4 className='numeroContador' >{contador}</h4> 
     <Button colorScheme='red' onClick={() => setContador (contador - 1)}>-</Button>
     </div>
-
 </>
 )
 }
