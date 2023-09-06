@@ -1,9 +1,7 @@
-import { useEffect, useState } from "react";
-import ItemList from "./ItemList";
-import { Grid, GridItem, Img } from "@chakra-ui/react";
 import React from "react";
+import ItemDetail from "./ItemDetail";
 
-const ItemListContainer = () => {
+const ItemDetailContainer = () => {
   const productos = [
     {
       id: 1,
@@ -61,22 +59,23 @@ const ItemListContainer = () => {
         resolve(productos);
       }, 2000);
     } else {
-      reject(new Error("No hay mas datos"));
+      reject(new Error("No hay datos"));
     }
   });
 
   getProductos
-    .then((res) => {})
-    .catch((error) => {
-      console.log(error);
-    });
+  .then((res) =>{
+  })
+  .catch((error) =>{
+    console.log(error);
+  })
 
   return (
     <>
-      <ItemList productos={productos} />
+      <ItemDetail productos={productos}
+      />
     </>
   );
 };
 
-
-export default ItemListContainer;
+export default ItemDetailContainer;

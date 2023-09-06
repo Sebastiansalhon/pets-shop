@@ -19,12 +19,17 @@ const restarContador = () => {
         setContador (contador - 1)
     }
 }
+
+const onAdd = () => {
+    alert ({contador})
+}
 return (
 <>
     <div className = 'contador'>
     <Button id='botonsuma' colorScheme='blue'onClick={sumarContador}>+</Button>
     <h4 className='numeroContador' >{contador}</h4> 
     <Button id='botonresta' colorScheme='red' onClick={restarContador}>-</Button>
+    <Button id='botonAlert' colorScheme='green' onClick={onAdd}>OnAdd</Button>
     </div>
 </>
 )
