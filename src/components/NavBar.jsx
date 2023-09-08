@@ -11,17 +11,14 @@ import {
 } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 
-
-
-
 const NavBar = () => {
   return (
     <>
       <div className="navBar">
         <Flex>
           <Box bg="burlywood" p="4">
-            <Link to={"/"}>  
-            <h3 className="brand">Pets Shop</h3>
+            <Link to={"/"}>
+              <h3 className="brand">Pets Shop</h3>
             </Link>
           </Box>
           <Spacer bg="burlywood" />
@@ -31,16 +28,16 @@ const NavBar = () => {
                 <p className="menu">Categorias</p>
               </MenuButton>
               <MenuList>
-                <MenuItem>Categoria A</MenuItem>
-                <MenuItem>Categoria B</MenuItem>
-                <MenuItem>Categoria C</MenuItem>
+                <MenuItem><Link to={`/categoria/${"Perros"}`}>Perros</Link></MenuItem>
+                <MenuItem><Link to={`/categoria/${"Gatos"}`}>Gatos</Link></MenuItem>
+                <MenuItem><Link to={`/categoria/${"Accesorios"}`}>Accesorios</Link></MenuItem>
               </MenuList>
             </Menu>
           </Box>
           <Spacer bg="burlywood" />
           <Box bg="burlywood">
-            <Link to={'/cart'}>
-            <CartWidget />
+            <Link to={"/cart"}>
+              <CartWidget />
             </Link>
           </Box>
         </Flex>

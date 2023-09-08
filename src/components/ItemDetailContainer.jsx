@@ -1,6 +1,8 @@
 import React from "react";
 import ItemDetail from "./ItemDetail";
 
+
+
 const ItemDetailContainer = () => {
   const productos = [
     {
@@ -52,6 +54,7 @@ const ItemDetailContainer = () => {
       precio: 625,
     },
   ];
+
 
   const getProductos = new Promise((resolve, reject) => {
     if (productos.length > 0) {

@@ -1,39 +1,49 @@
-import React from 'react'
-import { Card, CardBody, Image, Stack, Heading, Text, Divider, CardFooter, ButtonGroup, Button, Grid, GridItem,Center } from '@chakra-ui/react'
-import { Link } from 'react-router-dom'
-const Item = ({producto}) => {
+import React from "react";
+import {
+  Card,
+  CardBody,
+  Image,
+  Stack,
+  Heading,
+  Text,
+  Divider,
+  CardFooter,
+  ButtonGroup,
+  Button,
+  Grid,
+  GridItem,
+  Center,
+  CardHeader,
+} from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 
+const Item = ({ producto }) => {
+
+  // console.log(producto);
   return (
     <>
-    <Center>
-    <Card maxW='sm'>
-  <CardBody>
-    <Image
-    />
-    <Stack mt='6' spacing='3'>
-      <Heading size='md'>{producto.nombre}</Heading>
-      <Text>
-        {producto.descripcion}
-      </Text>
-    </Stack>
-  </CardBody>
-  <Divider />
-    <Center>
-  <CardFooter>
-    <ButtonGroup spacing='2'>
-      <Link to={'/category/id:'}>
-      <Button variant='solid' colorScheme='blue'>
-        Detalle
-      </Button>
-      </Link>
-    </ButtonGroup>
-  </CardFooter>
-      </Center>
-</Card>
-    </Center>
+        <Card>
+          <CardBody>
+            <Image
+              src={producto.image}
+            />
+            <Stack>
+              <Heading size='md'>{producto.nombre}</Heading>
+              <Text>
+
+              </Text>
+            </Stack>
+          </CardBody>
+          <CardFooter>
+                <Link to={`/item/${producto.id}`}>
+              <Button variant="solid" colorScheme="blue">
+                  Detalle
+              </Button>
+                  </Link>
+          </CardFooter>
+        </Card>
     </>
+  );
+};
 
-  )
-}
-
-export default Item
+export default Item;

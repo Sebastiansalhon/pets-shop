@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
-import { Button, ButtonGroup } from '@chakra-ui/react'
+import { Button, ButtonGroup, Spacer } from '@chakra-ui/react'
 
 const ItemCount = () => {
 
@@ -21,7 +21,10 @@ const restarContador = () => {
 }
 
 const onAdd = () => {
-    alert ({contador})
+    if(contador > 0){
+        alert(`Agregaste ${contador} items al carrito`)
+    }
+    
 }
 return (
 <>
@@ -29,7 +32,8 @@ return (
     <Button id='botonsuma' colorScheme='blue'onClick={sumarContador}>+</Button>
     <h4 className='numeroContador' >{contador}</h4> 
     <Button id='botonresta' colorScheme='red' onClick={restarContador}>-</Button>
-    <Button id='botonAlert' colorScheme='green' onClick={onAdd}>OnAdd</Button>
+    <Spacer/>
+    <Button id='botonAlert' colorScheme='green' onClick={onAdd}>Agregar a Carrito</Button>
     </div>
 </>
 )

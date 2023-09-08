@@ -2,8 +2,13 @@ import { useEffect, useState } from "react";
 import ItemList from "./ItemList";
 import { Grid, GridItem, Img } from "@chakra-ui/react";
 import React from "react";
+import { useParams } from "react-router-dom";
+
+
 
 const ItemListContainer = () => {
+const {categoria} = useParams ()
+
   const productos = [
     {
       id: 1,
@@ -55,6 +60,8 @@ const ItemListContainer = () => {
     },
   ];
 
+
+
   const getProductos = new Promise((resolve, reject) => {
     if (productos.length > 0) {
       setTimeout(() => {
@@ -71,10 +78,13 @@ const ItemListContainer = () => {
       console.log(error);
     });
 
+
+const productosFiltrados = productos.filter((producto) => producto.categoria === categoria)
+
   return (
-    <>
-      <ItemList productos={productos} />
-    </>
+
+      categoria ? <ItemList productos={productosFiltrados} /> : <ItemList productos={productos} />
+
   );
 };
 

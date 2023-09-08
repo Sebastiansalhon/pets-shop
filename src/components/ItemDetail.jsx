@@ -13,20 +13,23 @@ import {
 import { useParams } from "react-router-dom";
 
 const ItemDetail = ({ productos }) => {
-  
+  const { id } = useParams();
+
+  const productosFiltrados = productos.filter((producto) => producto.id == id);
+
   return (
     <div>
-      {productos.map((p) => {
+      {productosFiltrados.map((p) => {
         return (
           <div key={p.id}>
-            <Center p="1rem">
+            <Center>
               <Card>
                 <CardHeader>
                   <Heading size="md">{p.nombre}</Heading>
                 </CardHeader>
                 <CardBody>
                   <Text>{p.descripcion}</Text>
-                  <Text>{p.precio}</Text>
+                  <Text>{p.categoria}</Text>
                 </CardBody>
                 <CardFooter>
                   <ItemCount />
