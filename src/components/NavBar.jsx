@@ -28,9 +28,9 @@ const NavBar = () => {
                 <p className="menu">Categorias</p>
               </MenuButton>
               <MenuList>
-                <MenuItem><Link to={`/categoria/${"Perros"}`}>Perros</Link></MenuItem>
-                <MenuItem><Link to={`/categoria/${"Gatos"}`}>Gatos</Link></MenuItem>
-                <MenuItem><Link to={`/categoria/${"Accesorios"}`}>Accesorios</Link></MenuItem>
+                <Link to={`/categoria/${"perros"}`}><MenuItem>Perros</MenuItem></Link>
+                <Link to={`/categoria/${"gatos"}`}><MenuItem>Gatos</MenuItem></Link>
+                <Link to={`/categoria/${"accesorios"}`}><MenuItem>Accesorios</MenuItem></Link>
               </MenuList>
             </Menu>
           </Box>

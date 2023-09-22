@@ -17,31 +17,32 @@ import {
 } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 
-const Item = ({ producto }) => {
+const Item = ({ productos }) => {
 
-  // console.log(producto);
   return (
-    <>
-        <Card>
-          <CardBody>
-            <Image
-              src={producto.image}
-            />
-            <Stack>
-              <Heading size='md'>{producto.nombre}</Heading>
-              <Text>
-
-              </Text>
-            </Stack>
-          </CardBody>
-          <CardFooter>
-                <Link to={`/item/${producto.id}`}>
-              <Button variant="solid" colorScheme="blue">
-                  Detalle
-              </Button>
-                  </Link>
-          </CardFooter>
-        </Card>
+  
+    <> 
+      {productos.map((p) => (
+        <Center className="card">
+          <Card border="solid" w="350px" margin="20px">
+            <CardBody>
+              <Image src={p.imagen} />
+              <Stack>
+                <Heading size="md" textAlign={"center"}>
+                  {p.nombre}
+                </Heading>
+              </Stack>
+              <Text></Text>
+              <CardFooter justifyContent="center">
+                <Link to={`/item/${p.id}`}>
+                  <Button colorScheme="orange" color='black'>Detalle
+                  </Button>
+                </Link>
+              </CardFooter>
+            </CardBody>
+          </Card>
+        </Center>
+      ))}
     </>
   );
 };

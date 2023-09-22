@@ -1,4 +1,4 @@
-import React from "react";
+import {useState} from "react";
 import ItemCount from "./ItemCount";
 import {
   Card,
@@ -9,36 +9,45 @@ import {
   Text,
   Button,
   Center,
+  Stack,
+  Image,
+  Divider,
+  ButtonGroup,
 } from "@chakra-ui/react";
-import { useParams } from "react-router-dom";
 
-const ItemDetail = ({ productos }) => {
-  const { id } = useParams();
+const ItemDetail = ({ producto }) => {
 
-  const productosFiltrados = productos.filter((producto) => producto.id == id);
+// const [cantidadAgregada, setCantidadAgregada] = useState(0)
+// const {addItem} = useContext(CartContext)
+// const handleOnAdd = (quantity) => {
+//   setCantidadAgregada(quantity)
+//     const item = {
+//       id, nombre, precio
+//     }
+
+//     addItem(item, quantity)
+// }
 
   return (
     <div>
-      {productosFiltrados.map((p) => {
-        return (
-          <div key={p.id}>
-            <Center>
-              <Card>
-                <CardHeader>
-                  <Heading size="md">{p.nombre}</Heading>
-                </CardHeader>
-                <CardBody>
-                  <Text>{p.descripcion}</Text>
-                  <Text>{p.categoria}</Text>
-                </CardBody>
-                <CardFooter>
-                  <ItemCount />
-                </CardFooter>
-              </Card>
-            </Center>
-          </div>
-        );
-      })}
+      <Card maxW="sm">
+        <CardBody>
+          <Image src={producto.imagen} alt="" borderRadius="lg" />
+          <Stack mt="6" spacing="3">
+            <Heading size="md">{producto.nombre}</Heading>
+            <Text>{producto.descripcion}</Text>
+            <Text color="blue.600" fontSize="2xl">
+              ${producto.precio}
+            </Text>
+          </Stack>
+        </CardBody>
+        <Divider />
+        <CardFooter>
+          <ButtonGroup spacing="2">
+            <ItemCount />
+          </ButtonGroup>
+        </CardFooter>
+      </Card>
     </div>
   );
 };
