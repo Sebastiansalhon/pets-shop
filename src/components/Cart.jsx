@@ -1,23 +1,44 @@
-import React from "react";
-import { useState } from "react";
 import Form from "./Form";
 import { Link } from "react-router-dom";
-// import { useContext } from "react";
-// import { CartContext } from "../context/CartContext";
-
-
+import { Button } from "@chakra-ui/react";
+import { useContext } from "react";
+import { CartContext } from "../context/CartContext";
+import ItemCart from "./ItemCart";
 const Cart = () => {
+  const { cart, clearCart, precioTotal } = useContext(CartContext);
 
-  // const {cart, setCart, mensaje} = useContext(CartContext)
+  if (cart.length === 0) {
+    return (
+      <>
+        <div className="msjCarritoVacio">Su carrito esta vacio.</div>
+        <div className="btnBackHome">
+          <Link to={"/"}>
+            <Button colorScheme="orange" className="btnBackHome">
+              Regresar a catalogo
+            </Button>
+          </Link>
+        </div>
+      </>
+    );
+  }
 
-
-  return(
-  
-    <div>
-      {/* {mensaje} */}
-      {/* {cart.length > 0 ? <Form/> : <Link to={'/'}><button>Regresar a catalogo</button></Link>} */}
+  return (
+    <div className="cart">
+    <div className="cartCard">
+      {cart.map((producto) => (
+        <ItemCart key={producto.id} producto={producto} />
+        ))}
+        </div>
+        <div className="limpiarBtn">
+        <Button onClick={clearCart}>Limpiar Carrito</Button>
+      </div>
+        <div>
+        <p className="precioTotal">Su Total es: ${precioTotal()}</p>
+        </div>
       
-    </div>  
+
+      <Form />
+    </div>
   );
 };
 

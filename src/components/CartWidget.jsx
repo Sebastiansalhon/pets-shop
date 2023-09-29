@@ -1,16 +1,21 @@
-import React from 'react'
-
+import React from "react";
+import { useContext } from "react";
+import { CartContext } from "../context/CartContext";
 const CartWidget = () => {
-    return (
-        <>
-        <div className='cartShop'>
-        <span className="material-symbols-outlined">
-shopping_bag
-</span>
-        <span className='cartItems'>5</span>
-        </div>
-        </>
-    )
-}
 
-export default CartWidget
+    const {productosTotales} = useContext(CartContext);
+
+
+
+
+  return (
+    <>
+      <div className="cartShop">
+        <span className="material-symbols-outlined">shopping_bag</span>
+        <span className="cartItems">{productosTotales()|| ''}</span>
+      </div>
+    </>
+  );
+};
+
+export default CartWidget;

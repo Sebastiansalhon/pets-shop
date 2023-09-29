@@ -1,13 +1,17 @@
 import React from "react";
 import Item from "./Item";
-
+import {Loader} from "./Loader"
 const ItemList = ({ productos }) => {
+
+const loading = []
 
 
   return (
 
     <div className="card">
-      <Item productos={productos}/>
+      {
+        loading ? <Item productos={productos}/> : <Loader/>
+      }
     </div>
       )
 

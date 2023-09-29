@@ -19,10 +19,14 @@ useEffect (() => {
   })
 },[])
 
+
+
+
 const productosFiltrados = productos.filter((producto) => producto.categoria === categoria)
 
   return (
 
+    productos.length === 0 ? <Loader/> : 
       categoria ? <ItemList productos={productosFiltrados} /> : <ItemList productos={productos}/> 
   );
 };

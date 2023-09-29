@@ -2,6 +2,7 @@
     font-family: 'Pacifico', cursive;
     font-size: 40px;
     color: chocolate;
+    text-decoration: none;
 }
 
 .menu {
@@ -20,7 +21,9 @@
     font-size: 40px;
     color: chocolate;
 }
-
+.cartItems{
+    justify-content: baseline;
+}
 .greeting {
     padding-top: 16px;
     text-align: center;
@@ -65,10 +68,93 @@
     margin-right: auto;
     display: flex;
     flex-wrap: wrap;
+    
 }
 
 .detailCard{
     display: flex;
     justify-content: center;
     margin-top: 150px;
+}
+
+.formulario {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 150px;
+    width: 50%;
+    text-align: center;
+
+}
+
+.btnComprar {
+    margin-top: 20px;
+}
+
+.btnBackHome {
+    display: flex;
+    justify-content: center;
+    margin-top: 150px;
+}
+
+.msjCarritoVacio {
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: x-large;
+    margin-top: 140px;
+}
+
+
+h4 {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding: 5px;
+    text-align: center;
+}
+
+
+h3 {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+    font-size: x-large;
+    text-decoration: underline;
+}
+.itemCart {
+    display: flex;
+    align-items: center;
+}
+
+
+.imgCart {
+    width: auto;
+    height: 300px;
+
+}
+
+.cartCard {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 150px;
+}
+
+.limpiarBtn {
+align-self: center;
+margin-top: 70px;
+}
+
+.cart {
+    display: flex;
+    flex-direction: column;
+}
+.precioTotal {
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: xx-large;
+    margin-top: 30px;
+}
+
+.eliminarBtn {
+margin-left: 70px;
 }

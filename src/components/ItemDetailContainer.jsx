@@ -1,7 +1,7 @@
 import React from "react";
 import ItemDetail from "./ItemDetail";
 import {useEffect, useState} from 'react'
-import {doc, getDoc, getFirestore, getDocs, collection} from 'firebase/firestore'
+import {getFirestore, getDocs, collection} from 'firebase/firestore'
 import { useParams } from "react-router-dom";
 import { Loader } from "./Loader";
 
@@ -33,7 +33,7 @@ const productoFiltrado = producto.filter((producto) => producto.id == id)
         productoFiltrado.length > 0 ?
         productoFiltrado.map(p => {
           return(
-            <ItemDetail producto={p}/>
+            <ItemDetail producto={p} key={p.id}/>
             )
           })
           : <Loader/>

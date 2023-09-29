@@ -1,44 +1,44 @@
-import {createContext, useState} from 'react'
+import { calcLength } from "framer-motion";
+import { createContext, useState } from "react";
 
-export const CartContext = createContext({
-  cart: []
-})
+export const CartContext = createContext(null);
 
-export const CartProvider = ({children}) => {
-  const [cart, setCart] = useState([])
-  console.log(cart);
+const CartContextProvider = ({ children }) => {
 
-  const addItem = (item, quantity) => {
-    if(!isInCart(item.id)) {
-      setCart(prev =>[...prev, {...item, quantity}])
+  const [cart, setCart] = useState([]);
+
+  const clearCart = () => setCart([]);
+
+  const enCart = (id) => {
+    return cart.find (producto => producto.id === id) ? true : false
+  }
+
+  const quitarDelCart = (id) => setCart(cart.filter(producto => producto.id !== id))
+
+  const agregarAlCart = (item, quantity) => {
+    if(enCart(item.id)){
+      setCart(cart.map(producto => {return producto.id === item.id ? {...producto, quantity: producto.quantity + quantity} : producto}))
     }else{
-      console.error('El producto ya fue agregado')
+        setCart([...cart, {...item, quantity}])
     }
   }
 
 
-const removeItem = (itemId) => {
-  const cartUpdated = cart.filter(producto => producto.id !== itemId)
-  setCart(cartUpdated)
+
+const precioTotal = () => {
+  return cart.reduce ((prev, act) => prev + act.quantity * act.precio, 0)
 }
 
-const clearCart = () => {
-  setCart([])
-}
-
-const isInCart = (itemId) => {
-  return cart.some(producto => producto.id === itemId)
-}
-
-return(
-  <CartContext.Provider value={{cart, addItem, removeItem, clearCart}}>
-    {children}
-  </CartContext.Provider>
-)
+const productosTotales = () => cart.reduce((acumulador, productoActual) => acumulador + productoActual.quantity, 0)
 
 
+console.log('carrito', cart);
 
+  return (
+    <CartContext.Provider value={{clearCart, enCart, quitarDelCart, agregarAlCart, precioTotal, productosTotales, cart}}>
+      {children}
+    </CartContext.Provider>
+  );
+};
 
-
-
-}
+export default CartContextProvider;

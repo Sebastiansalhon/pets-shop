@@ -23,7 +23,7 @@ const Item = ({ productos }) => {
   
     <> 
       {productos.map((p) => (
-        <Center className="card">
+        <Center className="card" key={p.id}>
           <Card border="solid" w="350px" margin="20px">
             <CardBody>
               <Image src={p.imagen} />
