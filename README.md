@@ -21,5 +21,6 @@
 
 ##### A continuación dejo un GIF del funcionamiento del proyecto. 
 
+![Gif](/src/assets/GifProyecto.gif)
 
 
