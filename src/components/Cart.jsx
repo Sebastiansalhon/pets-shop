@@ -7,6 +7,9 @@ import ItemCart from "./ItemCart";
 const Cart = () => {
   const { cart, clearCart, precioTotal } = useContext(CartContext);
 
+
+
+
   if (cart.length === 0) {
     return (
       <>

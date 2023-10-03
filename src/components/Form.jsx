@@ -7,22 +7,44 @@ import {
   FormControl,
   FormLabel,
   Input,
+  Alert,
+  AlertIcon,
+  AlertTitle,
+  AlertDescription
 } from "@chakra-ui/react";
+
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+
 const Form = () => {
+
+const mensaje2 = () =>{
+  if(nombre !== '' && email !== '') {
+    toast.success('Compra realizada con exito', {
+      position: "top-center",
+      autoClose: 2500,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      });
+  }
+}
+  
+
+
   const [nombre, setNombre] = useState("");
   const [email, setEmail] = useState("");
   const [orderId, setOrderId] = useState(null);
 
   const db = getFirestore();
 
+
   const handelSubmit = (e) => {
     e.preventDefault();
-    nombre === ""
-      ? alert("Campo de nombre Vacio")
-      : alert(`Gracias por su compra ${nombre}`);
-    email === ""
-      ? alert("Ingrese correo para comprar")
-      : alert(`Factura enviada a ${email}`);
 
     addDoc(ordersCollection, order).then(({ id }) => setOrderId(id));
   };
@@ -33,7 +55,9 @@ const Form = () => {
   };
 
   const ordersCollection = collection(db, "orden");
+ 
 
+  
   return (
     <>
         <form onSubmit={handelSubmit}>
@@ -41,24 +65,28 @@ const Form = () => {
       <FormControl onSubmit={handelSubmit}>
         <FormLabel>Nombre</FormLabel>
         <Input
+          required
           placeholder="Nombre"
           type="text"
           onChange={(e) => setNombre(e.target.value)}
         />
         <FormLabel>Email</FormLabel>
         <Input
+          required
           placeholder="Email"
           type="email"
           onChange={(e) => setEmail(e.target.value)}
           />
 
-        <Button colorScheme="orange" className="btnComprar" type="submit">
+        <Button colorScheme="orange" className="btnComprar" type="submit" onClick={mensaje2} >
           Realizar Compra
         </Button>
       </FormControl>
       <div>Tu Id es: {orderId}</div>
     </div>
     </form>
+
+    <ToastContainer />
           </>
   );
 };

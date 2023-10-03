@@ -1,4 +1,3 @@
-import { calcLength } from "framer-motion";
 import { createContext, useState } from "react";
 
 export const CartContext = createContext(null);
